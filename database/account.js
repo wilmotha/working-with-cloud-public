@@ -1,19 +1,22 @@
-const sql = require('../sql');
+const sql = require('./sql');
 
 export async function getAccount(id) {
-    const [ account ] = await sql.query();
+    sql.each('query goes here'), (err, account) => {
+        return account;        
+    };
     
-    return account;
 }
 
-export async function postAccount(accountId) {
-    const [ id ] = await sql.query();
-
-    return id;
+export async function postAccount(accountId, account) {
+    sql.run('query goes here'), (err) => {
+        // error?
+    };
+    return accountId
 }
 
 export async function deleteAccount(accountId) {
-    const [ id ] = await sql.query();
-
-    return id;
+    sql.run('query goes here'), (err) => {
+        // error?
+    };
+    return accountId;
 }

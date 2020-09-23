@@ -1,19 +1,20 @@
-const sql = require('../sql');
+const sql = require('./sql');
 
 export async function getCustomer(id) {
-    const [ customer ] = await sql.query();
-    
-    return customer;
+    sql.each('query goes here'), (err, customer) => {
+        return customer;        
+    };
 }
 
 export async function getCustomerAccounts(id) {
-    const [ accounts ] = await sql.query();
-
-    return accounts;
+    sql.each('query goes here'), (err, accounts) => {
+        return accounts;        
+    };
 }
 
 export async function postCustomer(customer) {
-    const [ id ] = await sql.query();
-
-    return id;
+    sql.run('query goes here'), (err) => {
+        // error?  
+    };
+    return customer.id;
 }
