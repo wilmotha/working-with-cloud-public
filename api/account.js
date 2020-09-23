@@ -14,12 +14,27 @@ router.get('/:accountNumber', async (req, res) => {
     }
 });
 
-router.post('/', async (req, res) => {
+router.post('/:customerId', async (req, res) => {
     try {
         // add id checking - token?
         // check that body is formated correctly
-        const id = await postAccount(req.body);
+        const id = await postAccount(parseInt(req.params.customerId), req.body);
         res.send(201).send({
+            id: id
+        });
+    } catch (err) {
+        res.status(500).send({
+            error: "Error inserting account into db. Please try again."
+        });
+    }
+});
+
+router.delete('/:accountNumber', async (req, res) => {
+    try {
+        // add id checking - token?
+        // check that body is formated correctly
+        const id = await deleteAccount(parseInt(req.params.accountNumber));
+        res.send(204).send({
             id: id
         });
     } catch (err) {
