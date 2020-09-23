@@ -27,4 +27,4 @@ router.post('/', async (req, res) => {
             error: "Error inserting account into db. Please try again."
         });
     }
-}); 
+});

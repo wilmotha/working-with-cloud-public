@@ -18,7 +18,10 @@ router.post('/', async (req, res) => {
     try {
         // add id checking - token?
         // check that body is formated correctly
-        const id = await postAccount(req.body);
+        const id = await postCustomer(req.body);
+        res.status(201).send({
+            id: id
+        });
     } catch (err) {
         res.status(500).send({
             error: "Error inserting account into db. Please try again."
