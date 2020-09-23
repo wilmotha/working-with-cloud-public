@@ -1,6 +1,19 @@
-// import database
+const sql = require('../sql');
 
-async function getAccount(id) {
+export async function getAccount(id) {
+    const [ account ] = await sql.query();
+    
+    return account;
+}
 
-    return null;
+export async function postAccount(accountId) {
+    const [ id ] = await sql.query();
+
+    return id;
+}
+
+export async function deleteAccount(accountId) {
+    const [ id ] = await sql.query();
+
+    return id;
 }

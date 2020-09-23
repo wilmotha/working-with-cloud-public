@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const { getAccount } = require('../database/account');
+const { getAccount, postAccount, deleteAccount } = require('../database/account');
 
 router.get('/:accountNumber', async (req, res) => { 
     try {

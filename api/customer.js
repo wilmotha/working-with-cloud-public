@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const { getAccount } = require('../database/customer');
+const { getCustomer, getCustomerAccounts, postCustomer } = require('../database/customer');
 
 router.get('/:id', async (req, res) => { 
     try {

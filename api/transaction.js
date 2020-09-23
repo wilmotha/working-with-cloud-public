@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const { getAccount } = require('../database/customer');
+const { getAccountTransactions, getTransaction, postTransaction } = require('../database/transaction');
 
 // get all account transactions
 router.get('/:accountNumber', async (req, res) => {
